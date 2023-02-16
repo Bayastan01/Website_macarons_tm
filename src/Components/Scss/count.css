@@ -1,0 +1,57 @@
+.count {
+  width: 54px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #F2F2F3;
+  border-radius: 8px;
+  /* padding: 7px 8px; */
+  /* font-weight: 400; */
+  /* font-size: 12px; */
+  /* line-height: 16px; */
+}
+
+.count__minus {
+  width: 22px;
+}
+
+.count__plus {
+  width: 22px;
+}
+.count__minus__and__plus{
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+}
+.count__minus__and__plus:hover{
+  background-color: #FF7020;
+}
+
+.count__minus__and__pl{
+  width: 74px;
+  height: 30px;
+  border-radius: 10px;
+}
+.count__minus__and__pl:hover{
+  background-color: #FF7020;
+}
+
+@media (min-width: 1024px) {
+  .count {
+    width: 84px;
+    height: 40px;
+    border-radius: 12px;
+    padding: 9px 12px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .count__minus {
+    width: 10px;
+  }
+
+  .count__plus {
+    width: 10px;
+  }
+}
