@@ -58,7 +58,9 @@
 
 
 .order__wrap_list {
-  display: none;
+  // display: none;
+  width: 500px;
+  height: 100%;
 }
 
 .order_open .order__wrap_list {
@@ -139,7 +141,7 @@
 
 @media (max-width: 1000px) {
   .order__wrap_list {
-    display: none;
+    // display: none;
   }
   .order__total{
     display: none;
@@ -226,7 +228,7 @@
     scrollbar-color: rgb(236, 152, 6) rgb(255, 255, 255);
     overflow-x: hidden;
     scrollbar-color: red;
-    display: block;
+    // display: block;
     margin-bottom: 16px;
   }
 

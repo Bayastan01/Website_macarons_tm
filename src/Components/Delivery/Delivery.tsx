@@ -10,7 +10,7 @@ import FormHelperText from '@mui/joy/FormHelperText';
 import Radio from '@mui/joy/Radio';
 import RadioGroup from '@mui/joy/RadioGroup';
 
-
+// import {useTelegram} from '../hooks/useTelegram.js'
 import './Delivery.css'
 interface ChildProps {
   open: boolean;
@@ -19,25 +19,36 @@ interface ChildProps {
   inputValue:number;
   otp:string;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
 }
 
 function Delivery({ open, setOpen }: ChildProps) {
-  // const [ phoneNumber , setPhoneNumber ] = React.useState(+996);
   const [ YesOrNo , setYesOrNo ] = React.useState(false);
   const [ I , setI ] = React.useState(null);
   const [phone, setPhone] = React.useState('+996');
   const [inputValue, setInputValue] = React.useState(+996);
+  // const {user, onClose} = useTelegram();
 
-  
+
   return (
     <>
-
-     <Modal
-        aria-labelledby="modal-title"
-        aria-describedby="modal-desc"
-        open={open}
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-      >
+         <Modal
+              aria-labelledby="modal-title"
+              aria-describedby="modal-desc"
+              open={open}
+              sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          >
+       
+          <ModalClose
+            variant="outlined"
+            sx={{
+              top: 'calc(-1/4 * var(--IconButton-size))',
+              right: 'calc(-1/4 * var(--IconButton-size))',
+              boxShadow: '0 2px 12px 0 rgba(0 0 0 / 0.2)',
+              borderRadius: '50%',
+              bgcolor: 'background.body',
+            }}
+          />
        <div className="modal modal_delivery">
         <div className="modal__main mdelivery">
           <div className="mdelivery__container">
@@ -51,8 +62,8 @@ function Delivery({ open, setOpen }: ChildProps) {
                   <div className='mdelivery__flex_phone__numbers'>
                   <input className="mdelivery__input"
                     type="tl" name="phone"
-                    placeholder="Телефон" 
-                    value={phone} 
+                    placeholder="+996 999-999999"
+                    value="+996"
                     onChange={(e) => handleInput(e)} value={inputValue}/>
                     <div className='mdelivery__image_phone' >
                       <img className='mdelivery__image_phone__numbers' src='https://yt3.googleusercontent.com/ytc/AL5GRJWveMxT-E9mwNZeDjiBRRK_lEqd7yvC9pUhMxTjRQ=s900-c-k-c0x00ffffff-no-rj'/>
@@ -78,7 +89,6 @@ function Delivery({ open, setOpen }: ChildProps) {
                   <input className="mdelivery__input" type="text" name="address" placeholder="Улица, дом, квартира"/>
                   <input className="mdelivery__input mdelivery__input_half" type="number" name="floor" placeholder="Этаж"/>
                   <input className="mdelivery__input mdelivery__input_half" type="number" name="intercom" placeholder="Домофон"/>
-                  <input data-testid="checkout-form__phone-input" type="tel" placeholder="+996 999-999999"  id="phn-input" className="input" data-error="false" data-validation="false" data-clear="false" value="+996" />
                   <div className="mt9wcn-0 bhAylw sc-1iwyb4i-1 gbKdGX" data-error="false" data-testid="login-popup__code-input"  type="number">
                      <div>
                       <input type="tel" pattern="[0-9]*" data-id="0" className="sc-1iwyb4i-1 gbKdGX-0" value=""/>
@@ -90,7 +100,6 @@ function Delivery({ open, setOpen }: ChildProps) {
                 </div>
               </form>
               <button 
-                onClick={() => setOpen(false)}
                 className="mdelivery__submit" 
                 type="submit"
                 form="delivery"
@@ -111,10 +120,6 @@ function Delivery({ open, setOpen }: ChildProps) {
               </button>
         </div>
       </div>
-     
-
-
-      
       </Modal>
     </>
   );

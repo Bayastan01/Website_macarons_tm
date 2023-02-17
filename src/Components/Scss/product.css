@@ -5,7 +5,7 @@
   background: #FFFFFF;
   border-radius: 12px;
   min-height: 243px;
-  position: relative;
+  /* position: relative; */
 }
 
 .product__image {
