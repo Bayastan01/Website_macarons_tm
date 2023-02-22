@@ -1,46 +1,32 @@
-             
-import * as React from 'react';
 import './Basket.css'
 export default function BasketS() {
+	return (
+		<>
+			<input type='checkbox' id='check' />
+			<label htmlFor='check'></label>
+			<div className='sidebar'>
+				<header>My Menu</header>
 
-  return (
-    <>
-      <input type="checkbox" id="check"/>
-    <label htmlFor="check">
-      <i className="fas fa-bars" id="btn"></i>
-      <i className="fas fa-times" id="cancel"></i>
-    </label>
-    <div className="sidebar">
-      <header>My Menu</header>
-      <a href="#" className="active">
-        <i className="fas fa-qrcode"></i>
-        <span>Dashboard</span>
-      </a>
-      <a href="#">
-        <i className="fas fa-link"></i>
-        <span>Shortcuts</span>
-      </a>
-      <a href="#">
-        <i className="fas fa-stream"></i>
-        <span>Overview</span>
-      </a>
-      <a href="#">
-         <i className="fas fa-calendar"></i>
-        <span>Events</span>
-      </a>
-      <a href="#">
-        <i className="far fa-question-circle"></i>
-        <span>About</span>
-      </a>
-      <a href="#">
-        <i className="fas fa-sliders-h"></i>
-        <span>Services</span>
-      </a>
-      <a href="#">
-        <i className="far fa-envelope"></i>
-        <span>Contact</span>
-      </a>
-    </div>
-    </>
-  );
+				<button className='button-close'>
+					<input type='checkbox' id='check' />
+					<label htmlFor='check'>
+						<svg
+							width='25'
+							height='25'
+							viewBox='0 0 25 25'
+							fill='none'
+							className='close'
+						>
+							<path
+								fill-rule='evenodd'
+								clip-rule='evenodd'
+								d='M9.61 12.199L.54 3.129A1.833 1.833 0 113.13.536l9.07 9.07L21.27.54a1.833 1.833 0 012.592 2.592l-9.068 9.068 9.07 9.07a1.833 1.833 0 01-2.59 2.592l-9.072-9.07-9.073 9.073a1.833 1.833 0 01-2.591-2.592L9.61 12.2z'
+								fill='rgb(247, 116, 68)'
+							></path>
+						</svg>
+					</label>
+				</button>
+			</div>
+		</>
+	)
 }

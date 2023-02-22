@@ -1,258 +1,246 @@
 .catalog {
-  margin-bottom: 80px;
+	margin-bottom: 80px;
 }
 
 .catalog__order {
-  min-height: 48px;
-  margin-bottom: 30px;
+	min-height: 48px;
+	margin-bottom: 30px;
 }
 
 .catalog__title {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 120%;
-  margin-bottom: 16px;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 120%;
+	margin-bottom: 16px;
 }
 
 .catalog__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 145px);
-  gap: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 145px);
+	gap: 10px;
 }
-
+.open__basket {
+	position: relative;
+	margin-right: 35px;
+	width: 120px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 4px;
+	color: #ffa726;
+	border: #ffa726 2px solid;
+	opacity: 0.9;
+	box-shadow: -0.1rem -0.1rem 4rem #ffa726;
+}
 
 @media (min-width: 1024px) {
-  .catalog {
-    margin-bottom: 100px;
-  }
-  
-  .catalog__container {
-    display: flex;
-    gap: 30px;
-  }
+	.catalog {
+		margin-bottom: 100px;
+	}
 
-  .catalog__order {
-    padding-top: 72px;
-  }
+	.catalog__container {
+		display: flex;
+		gap: 30px;
+	}
 
-  .catalog__wrapper {
-    flex-grow: 1;
-  }
+	.catalog__order {
+		padding-top: 72px;
+	}
 
-  .catalog__title {
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
+	.catalog__wrapper {
+		flex-grow: 1;
+	}
 
-  .catalog__list {
-    grid-template-columns: repeat(auto-fit, 300px);
-    gap: 30px;
-  }
+	.catalog__title {
+		font-weight: 600;
+		margin-bottom: 24px;
+	}
+
+	.catalog__list {
+		grid-template-columns: repeat(auto-fit, 300px);
+		gap: 30px;
+	}
 }
 
-.cpUbDl[data-size="medium"] {
-  height: 40px;
-  padding: 8px 20px;
-  font-size: 16px;
-  line-height: 24px;
+.button-close {
+	position: absolute;
+
+	animation: spin 0.4s linear infinite;
+
+	animation-play-state: paused;
+}
+@keyframes spin {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+.button-close:hover {
+	animation-play-state: running;
 }
 
-.cpUbDl[data-type="primary"] {
-  background-color: rgb(255, 105, 0);
-  color: rgb(255, 255, 255);
-}
-.ieYvah {
-  top: 9px;
-  min-width: 90px;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-.cpUbDl {
-  outline: none;
-  border: none;
-  border-radius: 9999px;
-  text-align: center;
-  font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 500;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  user-select: none;
-  transition-property: background-color, color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-out;
-}
-.ieYvah .xlo7eb-8 {
-  background-color: red;
-  transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-  opacity: 1;
-  transform: translateX(0px);
-}
-
-.HpgIz {
-  background-color: red;
-  
-  display: inline-block;
-  width: 14px;
-  text-align: center;
-  position: relative;
-  left: -1px;
-}
-.ieYvah .xlo7eb-9:hover {
-  background-color: red;
-
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-  opacity: 0;
-  transform: translateX(-5px);
-}
-
-.ijMcBz {
-  display: inline-block;
-  width: 14px;
-  background-color: red;
-
+.button-close {
+	appearance: auto;
+	position: absolute;
+	top: 50%;
+	left: -7%;
+	color: #ffa726;
+	writing-mode: horizontal-tb !important;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
 }
-.sidebar{
-  position: fixed;
-  position: absolute;
-  width: 30%;
-  left: -30%;
-  height: 100%;
-  background: #1e1e1e;
-  transition: all .5s ease;
+.sidebar {
+	position: fixed;
+	/* position: absolute; */
+	background-color: #ffa726;
+	width: 45%;
+	right: -55%;
+	height: 100%;
+	transition: all 0.5s ease;
 }
-.sidebar header{
-  font-size: 28px;
-  color: white;
-  line-height: 70px;
-  text-align: center;
-  background: #1b1b1b;
-  user-select: none;
-  font-family: 'Montserrat', sans-serif;
+.sidebar header {
+	font-size: 28px;
+	color: rgb(248, 4, 4);
+	line-height: 70px;
+	text-align: center;
+	background: #1b1b1b;
+	user-select: none;
+	font-family: 'Montserrat', sans-serif;
 }
-.sidebar a{
-  display: block;
-  height: 65px;
-  width: 100%;
-  color: white;
-  line-height: 65px;
-  padding-left: 30px;
-  box-sizing: border-box;
-  border-bottom: 1px solid black;
-  border-top: 1px solid rgba(255,255,255,.1);
-  border-left: 5px solid transparent;
-  font-family: 'Open Sans', sans-serif;
-  transition: all .5s ease;
+.sidebar a {
+	display: block;
+	height: 65px;
+	width: 100%;
+	color: white;
+	line-height: 65px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	border-bottom: 1px solid black;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-left: 5px solid transparent;
+	font-family: 'Open Sans', sans-serif;
+	transition: all 0.5s ease;
 }
-a.active,a:hover{
-  border-left: 5px solid #b93632;
-  color: #b93632;
+a.active,
+.sidebar a i {
+	font-size: 23px;
+	margin-right: 16px;
 }
-.sidebar a i{
-  font-size: 23px;
-  margin-right: 16px;
+.sidebar a span {
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
-.sidebar a span{
-  letter-spacing: 1px;
-  text-transform: uppercase;
+#check {
+	display: none;
 }
-#check{
-  display: none;
+#btn {
+	background-color: rgb(50, 111, 165);
 }
-#btn{
-  background-color: aliceblue;
-}
-label #btn,label #cancel{
-  /* position: absolute; */
-  position: fixed;
+label #btn,
+label #cancel {
+	/* position: absolute; */
+	position: fixed;
 
-  cursor: pointer;
-  color: white;
-  border-radius: 5px;
-  border: 1px solid #262626;
-  margin: 15px 30px;
-  font-size: 29px;
-  background: #ff0000;
-  height: 45px;
-  width: 45px;
-  text-align: center;
-  line-height: 45px;
-  transition: all .5s ease;
+	cursor: pointer;
+	color: white;
+	border-radius: 5px;
+	border: 1px solid #262626;
+	margin: 15px 90%;
+	font-size: 29px;
+	height: 45px;
+	width: 45px;
+	text-align: center;
+	line-height: 45px;
+	transition: all 0.5s ease;
 }
-label #cancel{
-  opacity: 0;
-  visibility: hidden;
+label #cancel {
+	opacity: 0;
+	visibility: hidden;
 }
-#check:checked ~ .sidebar{
-  left: 0;
+#check:checked ~ .sidebar {
+	right: 0;
 }
-#check:checked ~ label #btn{
-  margin-left: 32%;
-  opacity: 0;
-  visibility: hidden;
+#check:checked ~ label #btn {
+	margin-left: 62%;
+	opacity: 0;
+	visibility: hidden;
 }
-#check:checked ~ label #cancel{
-  margin-left: 32%;
-  opacity: 1;
-  visibility: visible;
+#check:checked ~ label #cancel {
+	margin-left: 62%;
+	opacity: 1;
+	visibility: visible;
 }
-@media(max-width : 860px){
-  .sidebar{
-    position: fixed;
-    width: 100%;
-    left: -100%;
-    height: 100%;
-    background: #1e1e1e;
-    transition: all .5s ease;
-  }
-  label #btn,label #cancel{
-    /* position: absolute; */
-    position: fixed;
-  
-    cursor: pointer;
-    color: white;
-    border-radius: 5px;
-    border: 1px solid #262626;
-    margin: 15px 30px;
-    font-size: 29px;
-    background: #ff0000;
-    height: 45px;
-    width: 45px;
-    text-align: center;
-    line-height: 45px;
-    transition: all .5s ease;
-  }
-  
-  span{
-    position: absolute;
-    margin-left: 23px;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .sidebar a{
-    height: 60px;
-  }
-  .sidebar a i{
-    margin-left: -10px;
-  }
-  a:hover {
-    width: 200px;
-    background: inherit;
-  }
-  .sidebar a:hover span{
-    opacity: 1;
-    visibility: visible;
-  }
+@media (max-width: 860px) {
+	.open__basket {
+		margin-right: 0px;
+	}
+	.button-close {
+		appearance: auto;
+		position: absolute;
+		top: 2.5%;
+		left: 3%;
+		color: #ffa726;
+		writing-mode: horizontal-tb !important;
+	}
+	.sidebar {
+		position: fixed;
+		opacity: 1;
+		background: rgb(255, 255, 255);
+		width: 100%;
+		right: -100%;
+		height: 100%;
+		color: white;
+		transition: all 0.5s ease;
+	}
+	label #btn,
+	label #cancel {
+		/* position: absolute; */
+		position: fixed;
+
+		cursor: pointer;
+		color: white;
+		border-radius: 5px;
+		border: 1px solid #ffffff;
+		margin: 15px 90%;
+		font-size: 29px;
+		height: 45px;
+		width: 45px;
+		text-align: center;
+		line-height: 45px;
+		transition: all 0.5s ease;
+	}
+
+	span {
+		cursor: pointer;
+		color: white;
+		position: absolute;
+		margin-right: 63px;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.sidebar a {
+		height: 60px;
+	}
+	.sidebar a i {
+		margin-right: -10px;
+	}
+	a:hover {
+		width: 200px;
+		background: inherit;
+	}
+	.sidebar a:hover span {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@media (min-width: 560px) {
+	.open__basket {
+		margin-right: 30px;
+	}
 }

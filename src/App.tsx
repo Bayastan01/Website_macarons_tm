@@ -1,124 +1,139 @@
-import { useState,useEffect ,useRef} from 'react'
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import Header from './Components/Header/Header'
-import Categories from './Components/Categories/Categories'
-import './Components/Scss/catalog.css'
+import BasketSave from './Components/Basket/BasketSave'
 import ProductsCard from './Components/Card_products/ProductsCard'
+import Categories from './Components/Categories/Categories'
 import Footer from './Components/Footer/Footer'
+import Header from './Components/Header/Header'
+import './Components/Scss/catalog.css'
+import './Components/Scss/goods.css'
 import './Components/Scss/index.css'
 import './Components/Scss/ingredients.css'
 import './Components/Scss/normalize.css'
-import './Components/Scss/goods.css'
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import Paper from '@mui/material/Paper';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import BasketSave from './Components/Basket/BasketSave'
 function refreshMessages(): MessageExample[] {
-  const getRandomInt = (max: number) => Math.floor(Math.random() * Math.floor(max));
+	const getRandomInt = (max: number) =>
+		Math.floor(Math.random() * Math.floor(max))
 
-  return Array.from(new Array(50)).map(
-    () => messageExamples[getRandomInt(messageExamples.length)],
-  );
+	return Array.from(new Array(50)).map(
+		() => messageExamples[getRandomInt(messageExamples.length)]
+	)
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [value, setValue] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const [messages, setMessages] = useState(() => refreshMessages());
+	const [count, setCount] = useState(0)
+	const [value, setValue] = useState(1)
+	const ref = useRef<HTMLDivElement>(null)
+	const [messages, setMessages] = useState(() => refreshMessages())
 
-  useEffect(() => {
-    (ref.current as HTMLDivElement).ownerDocument.body.scrollTop = 0;
-    setMessages(refreshMessages());
-  }, [value, setMessages]);
+	useEffect(() => {
+		;(ref.current as HTMLDivElement).ownerDocument.body.scrollTop = 0
+		setMessages(refreshMessages())
+	}, [value, setMessages])
 
+	return (
+		<>
+			<BasketSave />
 
-  return (
-      <>
-          <BasketSave/>
+			<Box sx={{}} ref={ref}>
+				<main>
+					<Header />
+					<Categories />
+					<section className='catalog'>
+						<div className='container catalog__container'>
+							{/* <Basket/> */}
+							<ProductsCard />
+						</div>
+					</section>
+				</main>
 
-       <Box sx={{  }} ref={ref}>
-       <main>
-         <Header/>
-            <Categories/>
-            <section className="catalog">
-              <div className="container catalog__container">
-                {/* <Basket/> */}
-                <ProductsCard/>
-              </div>
-            </section>
-          </main>
-   
-      <Footer/>
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={4} className='app__menu'>
-        <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        >
-          <BottomNavigationAction  icon={<SearchOutlinedIcon fontSize='large' />} />
-          <BottomNavigationAction  icon={<HomeRoundedIcon fontSize='large' />} />
-          <BottomNavigationAction icon={<PersonRoundedIcon fontSize='large' />} />
-        </BottomNavigation>
-      </Paper>
-    </Box>
-      
-    </>
-  )
+				<Footer />
+				<Paper
+					sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+					elevation={4}
+					className='app__menu'
+				>
+					<BottomNavigation
+						showLabels
+						style={{ backgroundColor: '#ffa726' }}
+						value={value}
+						onChange={(event, newValue) => {
+							setValue(newValue)
+						}}
+					>
+						<BottomNavigationAction
+							icon={<SearchOutlinedIcon fontSize='large' />}
+						/>
+
+						<BottomNavigationAction
+							icon={<HomeRoundedIcon fontSize='large' />}
+						/>
+
+						<BottomNavigationAction
+							icon={<PersonRoundedIcon fontSize='large' />}
+						/>
+					</BottomNavigation>
+				</Paper>
+			</Box>
+		</>
+	)
 }
 
 export default App
 
 interface MessageExample {
-  primary: string;
-  secondary: string;
-  person: string;
+	primary: string
+	secondary: string
+	person: string
 }
 
 const messageExamples: readonly MessageExample[] = [
-  {
-    primary: 'Brunch this week?',
-    secondary: "I'll be in the neighbourhood this week. Let's grab a bite to eat",
-    person: '/static/images/avatar/5.jpg',
-  },
-  {
-    primary: 'Birthday Gift',
-    secondary: `Do you have a suggestion for a good present for John on his work
+	{
+		primary: 'Brunch this week?',
+		secondary:
+			"I'll be in the neighbourhood this week. Let's grab a bite to eat",
+		person: '/static/images/avatar/5.jpg',
+	},
+	{
+		primary: 'Birthday Gift',
+		secondary: `Do you have a suggestion for a good present for John on his work
       anniversary. I am really confused & would love your thoughts on it.`,
-    person: '/static/images/avatar/1.jpg',
-  },
-  {
-    primary: 'Recipe to try',
-    secondary: 'I am try out this new BBQ recipe, I think this might be amazing',
-    person: '/static/images/avatar/2.jpg',
-  },
-  {
-    primary: 'Yes!',
-    secondary: 'I have the tickets to the ReactConf for this year.',
-    person: '/static/images/avatar/3.jpg',
-  },
-  {
-    primary: "Doctor's Appointment",
-    secondary: 'My appointment for the doctor was rescheduled for next Saturday.',
-    person: '/static/images/avatar/4.jpg',
-  },
-  {
-    primary: 'Discussion',
-    secondary: `Menus that are generated by the bottom app bar (such as a bottom
+		person: '/static/images/avatar/1.jpg',
+	},
+	{
+		primary: 'Recipe to try',
+		secondary:
+			'I am try out this new BBQ recipe, I think this might be amazing',
+		person: '/static/images/avatar/2.jpg',
+	},
+	{
+		primary: 'Yes!',
+		secondary: 'I have the tickets to the ReactConf for this year.',
+		person: '/static/images/avatar/3.jpg',
+	},
+	{
+		primary: "Doctor's Appointment",
+		secondary:
+			'My appointment for the doctor was rescheduled for next Saturday.',
+		person: '/static/images/avatar/4.jpg',
+	},
+	{
+		primary: 'Discussion',
+		secondary: `Menus that are generated by the bottom app bar (such as a bottom
       navigation drawer or overflow menu) open as bottom sheets at a higher elevation
       than the bar.`,
-    person: '/static/images/avatar/5.jpg',
-  },
-  {
-    primary: 'Summer BBQ',
-    secondary: `Who wants to have a cookout this weekend? I just got some furniture
+		person: '/static/images/avatar/5.jpg',
+	},
+	{
+		primary: 'Summer BBQ',
+		secondary: `Who wants to have a cookout this weekend? I just got some furniture
       for my backyard and would love to fire up the grill.`,
-    person: '/static/images/avatar/1.jpg',
-  },
-];
+		person: '/static/images/avatar/1.jpg',
+	},
+]
