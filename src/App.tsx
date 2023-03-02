@@ -47,7 +47,6 @@ function App() {
 					<Categories />
 					<section className='catalog'>
 						<div className='container catalog__container'>
-							{/* <Basket/> */}
 							<ProductsCard />
 						</div>
 					</section>
