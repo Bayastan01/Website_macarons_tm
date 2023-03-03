@@ -1,9 +1,9 @@
 import React from 'react'
-import '../Scss/catalog.css'
-import '../Scss/product.css'
-
 import Basket from '../Basket/Basket'
 import Podrobbyi from '../Podrob/Podrobbyi'
+import '../Scss/catalog.css'
+import '../Scss/product.css'
+import './Product.css'
 const products = [
 	{
 		image:
@@ -260,12 +260,21 @@ const products = [
 ]
 function ProductsCard() {
 	const [open, setOpen] = React.useState(false)
+	const [openAdd, setOpenAdd] = React.useState(false)
+	const [openAddcount, setOpenAddcount] = React.useState(0)
+
+	const Add = () => {
+		setOpenAdd(true)
+		setOpenAddcount(+1)
+	}
 	return (
 		<>
 			<div className='catalog__wrapper'>
 				<div className='catalog__basket'>
 					<h2 className='catalog__title'>Бургеры</h2>
-					<Basket />
+					<div className='catalog__basket__fixed'>
+						<Basket />
+					</div>
 				</div>
 				<div className='catalog__wrap_list'>
 					<ul className='catalog__list'>
@@ -293,10 +302,42 @@ function ProductsCard() {
 											</h3>
 
 											<p className='product__weight'>520г</p>
-
-											<button className='product__add' type='button'>
-												Добавить
-											</button>
+											{openAdd === false ? (
+												<>
+													<button className='cart-buttons' onClick={Add}>
+														<span className='add-to-cart'>Добавить</span>
+														<span className='added'></span>
+														<i className='fa fa-shopping-cart'></i>
+													</button>
+												</>
+											) : (
+												<>
+													<div className='flexadd'>
+														<span
+															className='pqt-minus'
+															onClick={() => setOpenAddcount(openAddcount - 1)}
+														>
+															-
+														</span>
+														<button
+															className='cart-button'
+															onClick={() => setOpenAddcount(openAddcount + 1)}
+														>
+															<span className='add-to-cart'>
+																{openAddcount}
+															</span>
+															<span className='added'></span>
+															<i className='fa fa-shopping-cart'></i>
+														</button>
+														<span
+															className='pqt-plus'
+															onClick={() => setOpenAddcount(openAddcount + 1)}
+														>
+															+
+														</span>
+													</div>
+												</>
+											)}
 										</article>
 									</li>
 								</>

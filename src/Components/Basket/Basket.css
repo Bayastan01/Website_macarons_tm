@@ -218,11 +218,11 @@ label #cancel {
 
 	span {
 		cursor: pointer;
-		color: white;
+		color: #ffa726;
 		position: absolute;
-		margin-right: 63px;
-		opacity: 0;
-		visibility: hidden;
+		/* margin-right: 63px; */
+		/* opacity: 0; */
+		/* visibility: hidden; */
 	}
 	.sidebar a {
 		height: 60px;
