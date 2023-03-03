@@ -10,9 +10,12 @@ interface PersonProps {
 	hobbies: Array<string>
 	open: boolean
 	setOpen: boolean
+	codeOpen: boolean
 }
 function Delivery(props: { open: boolean; setOpen: boolean }) {
 	const [YesOrNo, setYesOrNo] = React.useState(false)
+	const [codeOpen, setCodeOpen] = React.useState(true)
+	const [sendOpen, setSendOpen] = React.useState(true)
 	const [I, setI] = React.useState(null)
 	const [Iw, setIw] = React.useState(open)
 	const [phone, setPhone] = React.useState('+996')
@@ -21,6 +24,39 @@ function Delivery(props: { open: boolean; setOpen: boolean }) {
 	const save = () => {
 		props.setOpen(false)
 	}
+	const CodeOpen = () => {
+		setCodeOpen(false)
+		console.log(codeOpen)
+	}
+	const CodeOpen2 = () => {
+		props.setOpen(false)
+		setTimeout(() => setCodeOpen(true), 1000)
+	}
+	const ChangeNumber = () => {
+		props.setOpen(true)
+		setCodeOpen(true)
+	}
+
+	const SendNumber = () => {
+		setSendOpen(false)
+		return (
+			<>
+				<div className='center'>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+					<div className='wave'></div>
+				</div>
+			</>
+		)
+	}
+
 	return (
 		<>
 			<div className='modal modal_delivery'>
@@ -28,72 +64,77 @@ function Delivery(props: { open: boolean; setOpen: boolean }) {
 					<div className='mdelivery__container'>
 						<h2 className='mdelivery__title'>Доставка</h2>
 
-						<form className='mdelivery__form'>
-							<div className='mdelivery__fieldset'>
-								<input
-									className='mdelivery__input'
-									type='text'
-									name='name'
-									placeholder='Ваше имя'
-								/>
-								<div className='mdelivery__flex_phone__numbers'>
+						{codeOpen === true ? (
+							<form className='mdelivery__form'>
+								<div className='mdelivery__fieldset'>
 									<input
 										className='mdelivery__input'
-										type='tl'
-										name='phone'
-										placeholder='+996 999-999999'
-										value='+996'
-										// onChange={e => handleInput(e)}
-										// value={inputValue}
+										type='text'
+										name='name'
+										placeholder='Ваше имя'
 									/>
-									<div className='mdelivery__image_phone'>
-										<img
-											className='mdelivery__image_phone__numbers'
-											src='https://yt3.googleusercontent.com/ytc/AL5GRJWveMxT-E9mwNZeDjiBRRK_lEqd7yvC9pUhMxTjRQ=s900-c-k-c0x00ffffff-no-rj'
+									<div className='mdelivery__flex_phone__numbers'>
+										<input
+											className='mdelivery__input'
+											type='tl'
+											name='phone'
+											placeholder='+996 999-999999'
+											value='+996'
+											// onChange={e => handleInput(e)}
+											// value={inputValue}
 										/>
+										<div className='mdelivery__image_phone'>
+											<img
+												className='mdelivery__image_phone__numbers'
+												src='https://yt3.googleusercontent.com/ytc/AL5GRJWveMxT-E9mwNZeDjiBRRK_lEqd7yvC9pUhMxTjRQ=s900-c-k-c0x00ffffff-no-rj'
+											/>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div className='mdelivery__fieldset mdelivery__fieldset_radio'>
-								<RadioGroup
-									defaultValue='female'
-									name='radio-buttons-group'
-									sx={{ my: 2 }}
+								<div className='mdelivery__fieldset mdelivery__fieldset_radio'>
+									<RadioGroup
+										defaultValue='female'
+										name='radio-buttons-group'
+										sx={{ my: 2 }}
+									>
+										<Radio
+											value='female'
+											label=' Доставка'
+											onClick={() => setYesOrNo(false)}
+										/>
+										<Radio
+											value='male'
+											label='Самовывоз'
+											onClick={() => setYesOrNo(true)}
+										/>
+									</RadioGroup>
+								</div>
+								<div
+									className='mdelivery__fieldset'
+									style={{ display: YesOrNo === false ? 'block' : 'none' }}
 								>
-									<Radio
-										value='female'
-										label=' Доставка'
-										onClick={() => setYesOrNo(false)}
+									<input
+										className='mdelivery__input'
+										type='text'
+										name='address'
+										placeholder='Улица, дом, квартира'
 									/>
-									<Radio
-										value='male'
-										label='Самовывоз'
-										onClick={() => setYesOrNo(true)}
+									<input
+										className='mdelivery__input mdelivery__input_half'
+										type='number'
+										name='floor'
+										placeholder='Этаж'
 									/>
-								</RadioGroup>
-							</div>
-							<div
-								className='mdelivery__fieldset'
-								style={{ display: YesOrNo === false ? 'block' : 'none' }}
-							>
-								<input
-									className='mdelivery__input'
-									type='text'
-									name='address'
-									placeholder='Улица, дом, квартира'
-								/>
-								<input
-									className='mdelivery__input mdelivery__input_half'
-									type='number'
-									name='floor'
-									placeholder='Этаж'
-								/>
-								<input
-									className='mdelivery__input mdelivery__input_half'
-									type='number'
-									name='intercom'
-									placeholder='Домофон'
-								/>
+									<input
+										className='mdelivery__input mdelivery__input_half'
+										type='number'
+										name='intercom'
+										placeholder='Домофон'
+									/>
+								</div>
+							</form>
+						) : (
+							<>
 								<div
 									className='mt9wcn-0 bhAylw sc-1iwyb4i-1 gbKdGX'
 									data-error='false'
@@ -130,16 +171,33 @@ function Delivery(props: { open: boolean; setOpen: boolean }) {
 										/>
 									</div>
 								</div>
-							</div>
-						</form>
-						<button
-							className='mdelivery__submit'
-							type='submit'
-							form='delivery'
-							onClick={save}
-						>
-							Оформить
-						</button>
+								<div onClick={SendNumber} className='sendPhoneNumber'>
+									Send code again
+								</div>
+								<div onClick={ChangeNumber} className='ChangePhoneNumber'>
+									Change number +996 702 *** *07
+								</div>
+							</>
+						)}
+						{codeOpen === true ? (
+							<button
+								className='mdelivery__submit'
+								type='submit'
+								form='delivery'
+								onClick={CodeOpen}
+							>
+								Оформить
+							</button>
+						) : (
+							<button
+								className='mdelivery__submit'
+								type='submit'
+								form='delivery'
+								onClick={CodeOpen2}
+							>
+								Оформить
+							</button>
+						)}
 					</div>
 					<button onClick={save} className='modal__close' type='button'>
 						<svg
