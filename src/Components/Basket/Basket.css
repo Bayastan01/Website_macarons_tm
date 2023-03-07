@@ -219,7 +219,7 @@ label #cancel {
 	span {
 		cursor: pointer;
 		color: #ffa726;
-		position: absolute;
+		/* position: absolute; */
 		/* margin-right: 63px; */
 		/* opacity: 0; */
 		/* visibility: hidden; */

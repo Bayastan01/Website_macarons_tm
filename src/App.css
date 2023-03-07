@@ -1,12 +1,11 @@
-body{
-  margin: 0%;
-  padding: 0%;
-  background: var(--tg-theme-bg-color);
-  color:  var(--tg-theme-text-color);
-}
-
-@media (min-width: 1025px) {
-  .app__menu{
-    display: none;
-  }
+/* body {
+	margin: 0%;
+	padding: 0%;
+	background: var(--tg-theme-bg-color);
+	color: var(--tg-theme-text-color);
+} */
+body {
+	margin: 0%;
+	padding: 0%;
+	background-repeat: no-repeat;
 }

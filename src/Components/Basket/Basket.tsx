@@ -35,21 +35,21 @@ function Basket() {
 					<Badge style={{ color: '#ff5c00' }} badgeContent={1} showZero>
 						<input type='checkbox' id='check' />
 						<label htmlFor='check'>
-							<ShoppingCartIcon />
+							<div
+								className='order__header'
+								role='button'
+								onClick={() => setOpen(true)}
+							>
+								<h2 className='order__title'>Корзина</h2>
+								<h2 className='order__count'>
+									<ShoppingCartIcon />
+								</h2>
+							</div>
 							<i className='fas fa-bars' id='btn'></i>
 							<i className='fas fa-times' id='cancel'></i>
 						</label>
 					</Badge>
 				</IconButton>
-
-				{/* <div
-							className='order__header'
-							role='button'
-							onClick={() => setOpen(true)}
-						>
-							<h2 className='order__title'>Корзина</h2>
-							<h2 className='order__count'>4</h2>
-						</div> */}
 			</section>
 		</>
 	)

@@ -1,5 +1,4 @@
 import React from 'react'
-import Basket from '../Basket/Basket'
 import Podrobbyi from '../Podrob/Podrobbyi'
 import '../Scss/catalog.css'
 import '../Scss/product.css'
@@ -270,12 +269,6 @@ function ProductsCard() {
 	return (
 		<>
 			<div className='catalog__wrapper'>
-				<div className='catalog__basket'>
-					<h2 className='catalog__title'>Бургеры</h2>
-					<div className='catalog__basket__fixed'>
-						<Basket />
-					</div>
-				</div>
 				<div className='catalog__wrap_list'>
 					<ul className='catalog__list'>
 						{products.map(a => {

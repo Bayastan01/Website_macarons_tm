@@ -1,9 +1,10 @@
+import '../Scss/ScroolPadding.css'
 import '../Scss/goods.css'
 import '../Scss/normalize.css'
 import './Header.css'
 function Header() {
 	return (
-		<div>
+		<>
 			<header className='header'>
 				<div className='container header__container'>
 					<div className='logo_cen'>
@@ -81,7 +82,7 @@ function Header() {
 					</div>
 				</div>
 			</header>
-		</div>
+		</>
 	)
 }
 

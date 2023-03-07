@@ -1,10 +1,9 @@
 .header {
 	background-image: url("data:image/svg+xml, %3Csvg id='header' width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='100' fill='%23FFAB08'/%3E%3C/svg%3E");
-	background-size: 611px;
+	background-size: 700px;
 	background-position: bottom;
 	background-repeat: no-repeat;
-	padding: 24px 0 30px;
-	margin-bottom: 30px;
+	padding: 14px 0 17px;
 }
 
 .logo_cen {
@@ -46,7 +45,7 @@
 @media (min-width: 480px) {
 	.header {
 		background-size: 1400px;
-		padding-bottom: 44px;
+		padding-bottom: 24px;
 	}
 
 	.header__container {

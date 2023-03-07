@@ -1,5 +1,5 @@
 .navigation {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .navigation__container {
@@ -101,7 +101,7 @@
 
 @media (min-width: 1024px) {
 	.navigation {
-		margin-bottom: 50px;
+		margin-bottom: 40px;
 	}
 
 	.navigation__list {
