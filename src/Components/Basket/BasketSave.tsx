@@ -19,128 +19,145 @@ const products = [
 	{
 		image:
 			'https://i.pinimg.com/564x/7e/eb/45/7eeb453310ebff3f254a5ec197220ee8.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#FFB901',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/a1/dc/cb/a1dccbe8a2d4fc23d4e1810118f9be42.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#144E5A',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/f8/5a/07/f85a0757cd92a9eb92c066daf79473a1.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#FFE2C8',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/10/76/0f/10760f60f073a4702c56d8a601cfdcc2.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#592251',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/ec/d8/8b/ecd88ba5b679e5e98cdb25f448dab666.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#7CF6FD',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/7e/eb/45/7eeb453310ebff3f254a5ec197220ee8.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#FFB901',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/a1/dc/cb/a1dccbe8a2d4fc23d4e1810118f9be42.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#144E5A',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/f8/5a/07/f85a0757cd92a9eb92c066daf79473a1.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#FFE2C8',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/10/76/0f/10760f60f073a4702c56d8a601cfdcc2.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#592251',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/ec/d8/8b/ecd88ba5b679e5e98cdb25f448dab666.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#7CF6FD',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/f8/5a/07/f85a0757cd92a9eb92c066daf79473a1.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#FFE2C8',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/10/76/0f/10760f60f073a4702c56d8a601cfdcc2.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#592251',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/ec/d8/8b/ecd88ba5b679e5e98cdb25f448dab666.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#7CF6FD',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/f8/5a/07/f85a0757cd92a9eb92c066daf79473a1.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#FFE2C8',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/10/76/0f/10760f60f073a4702c56d8a601cfdcc2.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder',
 		colors: '#592251',
 	},
 	{
 		image:
 			'https://i.pinimg.com/564x/ec/d8/8b/ecd88ba5b679e5e98cdb25f448dab666.jpg',
-		price: '$185.60',
+		price: '18',
 		title: 'Bag Burder ',
 		colors: '#7CF6FD',
 	},
 ]
 
 export default function BasketSave() {
+	const [indecount, setIndecount] = React.useState<number>(1)
 	const [open, setOpen] = React.useState<boolean>(false)
+	const [close, setClose] = React.useState<boolean>(false)
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
+	const In = () => {
+		setIndecount(indecount - 1)
+		if (indecount <= 1) {
+			alert('Вы дествительно хотите удалить?')
+		}
+	}
+	const De = () => {
+		setIndecount(indecount + 1)
+	}
+	const Close = () => {
+		setTimeout(() => {
+			setClose(true)
+		}, 1000)
+	}
+
 	return (
 		<>
 			<div style={{ display: open === true ? 'block' : 'none' }}>
 				<Delivery open={open} setOpen={setOpen} />
 			</div>
 			<div
-				className='sc-1v5x861-0 fGsVWz'
+				className={close == false ? 'not' : 'sc-1v5x861-0 fGsVWz'}
 				style={{ opacity: 1, display: open === false ? 'block' : 'none' }}
 			>
 				<input type='checkbox' id='check' />
@@ -157,6 +174,7 @@ export default function BasketSave() {
 								viewBox='0 0 25 25'
 								fill='none'
 								className='close'
+								onClick={Close}
 							>
 								<path
 									fill-rule='evenodd'
@@ -188,9 +206,13 @@ export default function BasketSave() {
 												</p>
 											</div>
 											<div className='count'>
-												<button className='count__minus__and__pl'>-</button>
-												<p className='count__amount'>1</p>
-												<button className='count__minus__and__pl'>+</button>
+												<button className='count__minus__and__pl' onClick={In}>
+													-
+												</button>
+												<p className='count__amount'>{indecount}</p>
+												<button className='count__minus__and__pl' onClick={De}>
+													+
+												</button>
 											</div>
 										</li>
 									</>
@@ -211,7 +233,12 @@ export default function BasketSave() {
 						</button>
 					</div>
 					<div className='order__apeal'>
-						<p className='order__text'> Вышее 1500$ Бесплатная доставка</p>
+						<p className='order__text'>
+							{' '}
+							Вышее 1500
+							<span className='currency'>₽ </span>
+							Бесплатная доставка
+						</p>
 					</div>
 				</div>
 			</div>

@@ -50,7 +50,8 @@
 	user-select: none;
 }
 .cart-buttons:hover {
-	background-color: #202431;
+	background-color: #e87212;
+	transition: 0.3s;
 }
 .cart-buttons:active {
 	transform: scale(0.9);

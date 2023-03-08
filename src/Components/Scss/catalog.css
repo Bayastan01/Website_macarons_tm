@@ -11,8 +11,6 @@
 	/* position: relative; */
 }
 .catalog__title {
-	position: sticky;
-	top: 0%;
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 120%;

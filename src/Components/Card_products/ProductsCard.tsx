@@ -264,7 +264,16 @@ function ProductsCard() {
 
 	const Add = () => {
 		setOpenAdd(true)
-		setOpenAddcount(+1)
+		setOpenAddcount(openAddcount + 1)
+	}
+
+	const Adds = () => {
+		if (openAddcount <= 1) {
+			setOpenAdd(false)
+		} else {
+			setOpenAdd(true)
+		}
+		setOpenAddcount(openAddcount - 1)
 	}
 	return (
 		<>
@@ -289,8 +298,11 @@ function ProductsCard() {
 											</p>
 
 											<h3 className='product__title'>
-												<button className='product__detail'>
-													Мясная бомба
+												<button
+													className='product__detail'
+													onClick={() => setOpen(true)}
+												>
+													Мясная бомба...
 												</button>
 											</h3>
 
@@ -306,10 +318,7 @@ function ProductsCard() {
 											) : (
 												<>
 													<div className='flexadd'>
-														<span
-															className='pqt-minus'
-															onClick={() => setOpenAddcount(openAddcount - 1)}
-														>
+														<span className='pqt-minus' onClick={Adds}>
 															-
 														</span>
 														<button

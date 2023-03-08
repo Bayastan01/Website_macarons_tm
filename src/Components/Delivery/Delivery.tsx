@@ -78,10 +78,9 @@ function Delivery(props: { open: boolean; setOpen: boolean }) {
 											className='mdelivery__input'
 											type='tl'
 											name='phone'
-											placeholder='+996 999-999999'
-											value='+996'
-											// onChange={e => handleInput(e)}
-											// value={inputValue}
+											placeholder='+996 771-234-567'
+											onChange={e => setInputValue(e)}
+											value={inputValue}
 										/>
 										<div className='mdelivery__image_phone'>
 											<img
