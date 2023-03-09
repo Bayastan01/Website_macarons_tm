@@ -138,7 +138,7 @@ export default function BasketSave() {
 	const In = () => {
 		setIndecount(indecount - 1)
 		if (indecount <= 1) {
-			const yesornos = confirm('Вы дествительно хотите удалить?', 'jok')
+			const yesornos = confirm('Вы дествительно хотите удалить?')
 			if (yesornos === true) {
 				setIndecount(indecount - 1)
 
