@@ -201,3 +201,7 @@
 .currency {
 	color: #f86310;
 }
+
+.aos {
+	z-index: 1;
+}

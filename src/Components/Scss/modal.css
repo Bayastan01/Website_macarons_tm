@@ -4,6 +4,7 @@
 	background-color: rgba(0, 0, 0, 0.8);
 	cursor: pointer;
 	overflow-y: auto;
+	z-index: 3;
 }
 
 .modal_open {

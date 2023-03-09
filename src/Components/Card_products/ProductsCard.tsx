@@ -1,8 +1,10 @@
+import Aos from 'aos'
 import React from 'react'
 import Podrobbyi from '../Podrob/Podrobbyi'
 import '../Scss/catalog.css'
 import '../Scss/product.css'
 import './Product.css'
+
 const products = [
 	{
 		image:
@@ -267,6 +269,10 @@ function ProductsCard() {
 		setOpenAddcount(openAddcount + 1)
 	}
 
+	React.useEffect(() => {
+		Aos.init({ duration: 2000 })
+	}, [])
+
 	const Adds = () => {
 		if (openAddcount <= 1) {
 			setOpenAdd(false)
@@ -283,65 +289,75 @@ function ProductsCard() {
 						{products.map(a => {
 							return (
 								<>
-									<li className='catalog__item'>
-										<article className='product'>
-											<img
-												onClick={() => setOpen(true)}
-												src={a.image}
-												alt='Мясная бомба'
-												className='product__image'
-											/>
-
-											<p className='product__price'>
-												{a.price}
-												<span className='currency'>₽</span>
-											</p>
-
-											<h3 className='product__title'>
-												<button
-													className='product__detail'
+									<div
+										className='aos'
+										data-aos='fade-up'
+										data-aos-anchor-placement='bottom-bottom'
+									>
+										<li className='catalog__item'>
+											<article className='product'>
+												<img
 													onClick={() => setOpen(true)}
-												>
-													Мясная бомба...
-												</button>
-											</h3>
+													src={a.image}
+													alt='Мясная бомба'
+													className='product__image'
+												/>
 
-											<p className='product__weight'>520г</p>
-											{openAdd === false ? (
-												<>
-													<button className='cart-buttons' onClick={Add}>
-														<span className='add-to-cart'>Добавить</span>
-														<span className='added'></span>
-														<i className='fa fa-shopping-cart'></i>
+												<p className='product__price'>
+													{a.price}
+													<span className='currency'>₽</span>
+												</p>
+
+												<h3 className='product__title'>
+													<button
+														className='product__detail'
+														onClick={() => setOpen(true)}
+													>
+														Мясная бомба...
 													</button>
-												</>
-											) : (
-												<>
-													<div className='flexadd'>
-														<span className='pqt-minus' onClick={Adds}>
-															-
-														</span>
-														<button
-															className='cart-button'
-															onClick={() => setOpenAddcount(openAddcount + 1)}
-														>
-															<span className='add-to-cart'>
-																{openAddcount}
-															</span>
+												</h3>
+
+												<p className='product__weight'>520г</p>
+												{openAdd === false ? (
+													<>
+														<button className='cart-buttons' onClick={Add}>
+															<span className='add-to-cart'>Добавить</span>
 															<span className='added'></span>
 															<i className='fa fa-shopping-cart'></i>
 														</button>
-														<span
-															className='pqt-plus'
-															onClick={() => setOpenAddcount(openAddcount + 1)}
-														>
-															+
-														</span>
-													</div>
-												</>
-											)}
-										</article>
-									</li>
+													</>
+												) : (
+													<>
+														<div className='flexadd'>
+															<span className='pqt-minus' onClick={Adds}>
+																-
+															</span>
+															<button
+																className='cart-button'
+																onClick={() =>
+																	setOpenAddcount(openAddcount + 1)
+																}
+															>
+																<span className='add-to-cart'>
+																	{openAddcount}
+																</span>
+																<span className='added'></span>
+																<i className='fa fa-shopping-cart'></i>
+															</button>
+															<span
+																className='pqt-plus'
+																onClick={() =>
+																	setOpenAddcount(openAddcount + 1)
+																}
+															>
+																+
+															</span>
+														</div>
+													</>
+												)}
+											</article>
+										</li>
+									</div>
 								</>
 							)
 						})}

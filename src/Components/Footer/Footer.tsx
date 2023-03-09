@@ -8,7 +8,7 @@ function Footer() {
 						<img
 							className='footer__logo'
 							src='img/logo-o.svg'
-							alt='Логотип YourMeal'
+							alt='Логотип Macarons'
 						/>
 
 						<address className='footer__address'>
@@ -72,9 +72,8 @@ function Footer() {
 								</ul>
 							</div>
 						</address>
-
 						<div className='footer__development'>
-							<p>© YouMeal, 2022</p>
+							<p>© Macarons, 2022</p>
 							<p>
 								Developer:{' '}
 								<a href='mailto:maksim.leskin@methed.ru'>Baiastan Baltabaev</a>

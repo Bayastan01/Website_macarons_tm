@@ -1,4 +1,6 @@
 import React from 'react'
+import Delivery from '../Delivery/Delivery'
+import './Basket.css'
 const style = {
 	position: 'absolute' as 'absolute',
 	top: '50%',
@@ -12,9 +14,6 @@ const style = {
 	px: 4,
 	pb: 3,
 }
-
-import Delivery from '../Delivery/Delivery'
-import './Basket.css'
 const products = [
 	{
 		image:
@@ -139,9 +138,22 @@ export default function BasketSave() {
 	const In = () => {
 		setIndecount(indecount - 1)
 		if (indecount <= 1) {
-			alert('Вы дествительно хотите удалить?')
+			const yesornos = confirm('Вы дествительно хотите удалить?', 'jok')
+			if (yesornos === true) {
+				setIndecount(indecount - 1)
+
+				setIsDeleting(true)
+				// const res = await deleteUser() setIsDeleting (false);
+				setIsDeleted(true)
+				setTimeout(() => setIsDeleted(false), 2000)
+			} else {
+				setIndecount(indecount)
+			}
+		} else {
+			setIndecount(indecount - 1)
 		}
 	}
+
 	const De = () => {
 		setIndecount(indecount + 1)
 	}
@@ -151,6 +163,18 @@ export default function BasketSave() {
 		}, 1000)
 	}
 
+	const [isDeleting, setIsDeleting] = React.useState(false)
+	const [isDeleted, setIsDeleted] = React.useState(false)
+	const handleClick = async () => {
+		const yesorno = confirm('Вы дествительно хотите удалить?')
+
+		if (yesorno === true) {
+			setIsDeleting(true)
+			// const res = await deleteUser() setIsDeleting (false);
+			setIsDeleted(true)
+			setTimeout(() => setIsDeleted(false), 2000)
+		}
+	}
 	return (
 		<>
 			<div style={{ display: open === true ? 'block' : 'none' }}>
@@ -163,9 +187,9 @@ export default function BasketSave() {
 				<input type='checkbox' id='check' />
 				<label htmlFor='check'></label>
 				<div className='sidebar'>
-					<header>My Menu</header>
+					<header>Basket</header>
 
-					<button className='button-close'>
+					<div className='button-close '>
 						<input type='checkbox' id='check' />
 						<label htmlFor='check'>
 							<svg
@@ -184,7 +208,7 @@ export default function BasketSave() {
 								></path>
 							</svg>
 						</label>
-					</button>
+					</div>
 
 					<div className='order__wrap_list'>
 						<ul className='order__list'>
@@ -199,20 +223,42 @@ export default function BasketSave() {
 											/>
 											<div className='order__goods goods'>
 												<h3 className='goods__title'>{a.title}</h3>
+
 												<p className='goods__weight'>512г</p>
 												<p className='goods__price'>
 													{a.price}
 													<span className='currency'>₽</span>
 												</p>
 											</div>
-											<div className='count'>
-												<button className='count__minus__and__pl' onClick={In}>
-													-
+											<div className='button_delate'>
+												<button
+													onClick={handleClick}
+													className={isDeleting || isDeleted ? 'deleting' : ''}
+													disabled={isDeleting || isDeleted}
+												>
+													<span className='animation'>
+														<span className='balls'></span>
+														<span className='lid'></span>
+														<span className='can'>
+															<span className='filler'></span>
+														</span>
+													</span>
 												</button>
-												<p className='count__amount'>{indecount}</p>
-												<button className='count__minus__and__pl' onClick={De}>
-													+
-												</button>
+												<div className='count'>
+													<button
+														className='count__minus__and__pl'
+														onClick={In}
+													>
+														-
+													</button>
+													<p className='count__amount'>{indecount}</p>
+													<button
+														className='count__minus__and__pl'
+														onClick={De}
+													>
+														+
+													</button>
+												</div>
 											</div>
 										</li>
 									</>

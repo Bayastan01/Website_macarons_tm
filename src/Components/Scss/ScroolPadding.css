@@ -10,8 +10,11 @@
 	padding-top: 10px;
 	background-color: #f9f9f9;
 	margin-bottom: 1px;
+	z-index: 2;
 }
 .nav {
+	padding-top: 10px;
+
 	background-color: #f9f9f9;
 	margin-bottom: 1px;
 }

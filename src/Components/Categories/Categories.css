@@ -92,7 +92,9 @@
 .navigation__button_sauce {
 	background-image: url('../img/sauce.png');
 }
-
+.navigation__button_drink {
+	background-image: url('../img/drink.png');
+}
 @media (min-width: 768px) {
 	.navigation__list {
 		column-gap: 12px;
