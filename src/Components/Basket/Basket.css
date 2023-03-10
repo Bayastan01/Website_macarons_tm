@@ -232,7 +232,7 @@ label #cancel {
 		margin-right: -10px;
 	}
 	a:hover {
-		width: 200px;
+		/* width: 200px; */
 		background: inherit;
 	}
 	.sidebar a:hover span {

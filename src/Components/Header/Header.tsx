@@ -1,3 +1,6 @@
+import ProductsCard from '../Card_products/ProductsCard'
+import Categories from '../Categories/Categories'
+import Footer from '../Footer/Footer'
 import '../Scss/ScroolPadding.css'
 import '../Scss/goods.css'
 import '../Scss/normalize.css'
@@ -82,6 +85,15 @@ function Header() {
 					</div>
 				</div>
 			</header>
+			<Categories />
+			<main>
+				<section className='catalog'>
+					<div className='container catalog__container'>
+						<ProductsCard />
+					</div>
+				</section>
+				<Footer />
+			</main>
 		</>
 	)
 }
