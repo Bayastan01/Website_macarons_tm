@@ -9,18 +9,6 @@ body {
 	padding: 0%;
 	background-repeat: no-repeat;
 }
-:root:after {
-	content: 'Macarons  love Macarons   Macarons   Macarons    Macarons   Macarons   Macarons   Macarons   Macarons   Macarons  Macarons love  Macarons  Macarons  Macarons love  Macarons   Macarons   Macarons     Macarons        Macarons     Macarons  love    Macarons   Macarons   Macarons   Macarons   Macarons  love  Macarons   Macarons  love Macarons   Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons love   Macarons   Macarons     Macarons  love      Macarons     Macarons      Macarons     Macarons   Macarons   Macarons   Macarons    Macarons   Macarons love  Macarons   Macarons   Macarons love  Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons     Macarons  love      Macarons     Macarons      Macarons     Macarons   Macarons   Macarons   Macarons love   Macarons   Macarons love  Macarons   Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons love  Macarons love  Macarons     Macarons        Macarons     Macarons      Macarons    love  Macarons   Macarons   Macarons   Macarons    Macarons   Macarons   Macarons   Macarons   Macarons love  Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons     Macarons        Macarons   love  Macarons      Macarons    Macarons   Macarons   Macarons   Macarons love   Macarons   Macarons   Macarons  love Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons  love   Macarons        Macarons love    Macarons      Macarons   love  Macarons   Macarons   Macarons   Macarons    Macarons love   Macarons   Macarons   Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons     Macarons    love    Macarons     Macarons  love    Macarons  Macarons   Macarons love  Macarons   Macarons    Macarons   Macarons   Macarons   Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons     Macarons        Macarons     Macarons      Macarons    Macarons   Macarons   Macarons   Macarons    Macarons   Macarons   Macarons   Macarons   Macarons   Macarons  Macarons   Macarons  Macarons  Macarons   Macarons   Macarons   Macarons     Macarons    love    Macarons     Macarons      Macarons    Macarons  ';
-	position: fixed;
-	transform: rotate(300deg);
-	-webkit-transform: rotate(300deg);
-	color: rgb(187, 182, 182);
-	top: -10px;
-	z-index: -1;
-	font-size: 40px;
-	color: #ffab08;
-	font-family: cursive;
-}
 
 .aktive_menu {
 	width: 90%;
@@ -33,7 +21,7 @@ body {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-bottom: 1%;
-	z-index: 2;
+	z-index: 5;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -58,4 +46,87 @@ body {
 	.aktive_menu {
 		display: none;
 	}
+}
+.settings_modal {
+	position: relative;
+	cursor: default;
+	margin: auto;
+}
+.aaas {
+	--gap: 8px;
+	background-color: #000000;
+	width: 100%;
+	min-height: 100%;
+	padding: 32px 10px;
+	display: flex;
+}
+.botton_setting_save {
+	border-radius: 10px;
+	overflow: hidden;
+	position: fixed;
+	bottom: 10%;
+	z-index: 5;
+	display: flex;
+	width: 80%;
+	justify-content: end;
+	align-items: center;
+}
+.botton_set_flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.changesavesetting {
+	width: 100px;
+	height: 40px;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 14px;
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10px;
+}
+.active__save {
+	background-color: #ff8c08;
+}
+.mdelivery__titles {
+	color: white;
+}
+.custom-select {
+	width: 90%;
+	height: 50px;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+.color_body {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 40px;
+}
+.colors__body {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+.Blue {
+	background-color: blue;
+}
+.Black {
+	background-color: black;
+}
+.Grey {
+	background-color: grey;
+}
+.Red {
+	background-color: red;
+}
+.mdelivery__containerr {
+	width: 100%;
+}
+.section_lang {
+	display: flex;
+	justify-content: center;
 }
