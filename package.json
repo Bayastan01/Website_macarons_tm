@@ -15,6 +15,7 @@
     "@mui/joy": "^5.0.0-alpha.66",
     "@mui/material": "^5.11.9",
     "@mui/styled-engine-sc": "^5.11.9",
+    "@reduxjs/toolkit": "^1.9.3",
     "@types/react-router-dom": "5.3.3",
     "aos": "^2.3.4",
     "lord-icon-element": "^4.0.3",
