@@ -73,10 +73,12 @@ function Footer() {
 							</div>
 						</address>
 						<div className='footer__development'>
-							<p>© Macarons, 2022</p>
+							<p>© Macarons, 2023</p>
 							<p>
 								Developer:{' '}
-								<a href='mailto:maksim.leskin@methed.ru'>Baiastan Baltabaev</a>
+								<a href='mailto:bayastan.baltabaev.kk@gmail.com'>
+									Baiastan Baltabaev
+								</a>
 							</p>
 						</div>
 					</div>

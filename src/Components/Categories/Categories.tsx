@@ -64,7 +64,10 @@ function Categories() {
 					</div>
 				</nav>
 			</div>
-			<div className='catalog__basket'>
+			<div
+				className='container'
+				style={{ display: 'flex', justifyContent: 'space-between' }}
+			>
 				<div data-aos='fade-right'>
 					<h2 className='catalog__title'>Бургеры</h2>
 				</div>
